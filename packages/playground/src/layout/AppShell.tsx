@@ -84,8 +84,11 @@ export function AppShell(props: AppShellProps) {
         <div className={appShellStyles.headerInner}>
           <div className={appShellStyles.headerBrand}>
             <Link to="/" className={appShellStyles.wordmark}>
-              <span>mp4</span>
-              <span className={appShellStyles.wordmarkAccent}>craft</span>
+              <img className={appShellStyles.brandMark} src="/logo.svg" alt="" aria-hidden="true" />
+              <span className={appShellStyles.wordmarkText}>
+                <span>mp4</span>
+                <span className={appShellStyles.wordmarkAccent}>craft</span>
+              </span>
             </Link>
             <span className={appShellStyles.tagline}>
               TypeScript-first, zero-dependency MP4 muxer for Node.js and modern browsers

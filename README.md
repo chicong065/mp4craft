@@ -1,6 +1,14 @@
-# mp4craft
+<p align="center">
+  <a href="https://mp4craft.pages.dev">
+    <picture>
+      <img src="docs/logo.svg" width="180" height="180" alt="mp4craft logo" />
+    </picture>
+  </a>
+</p>
 
-**TypeScript-first, zero-dependency MP4 muxer designed for the browsers**
+<h1 align="center">mp4craft</h1>
+
+<p align="center"><strong>TypeScript-first, zero-dependency MP4 muxer designed for the browser.</strong></p>
 
 ## What is mp4craft?
 
@@ -114,13 +122,11 @@ const muxer = new Mp4Muxer({
 
 ## Documentation
 
-Visit the [Docs](https://mp4craft.pages.dev/docs) for comprehensive guides, examples and
-API documentation.
+Visit the [Docs](https://mp4craft.pages.dev/docs) for comprehensive guides, examples and API documentation.
 
 ## Playground
 
-Visit the [Playground](https://mp4craft.pages.dev) to see mp4craft in
-action.
+Visit the [Playground](https://mp4craft.pages.dev) to see mp4craft in action.
 
 ## License
 

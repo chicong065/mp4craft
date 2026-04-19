@@ -11,3 +11,4 @@ packages/playground/src/**/*.js
 packages/playground/src/**/*.d.ts
 packages/playground/src/**/*.js.map
 packages/playground/src/**/*.d.ts.map
+!packages/playground/src/types/*.d.ts
