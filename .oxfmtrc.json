@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/oxfmt/configuration_schema.json",
+  "ignorePatterns": ["pnpm-lock.yaml"],
+  "printWidth": 120,
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "experimentalSortPackageJson": {
+    "sortScripts": true
+  },
+  "experimentalSortImports": {
+    "internalPattern": ["@playground/"],
+    "groups": [
+      ["side_effect"],
+      ["side_effect_style"],
+      ["builtin"],
+      ["external"],
+      ["internal"],
+      ["subpath"], // e.g. ##/..., @/...
+      ["parent"],
+      ["sibling"],
+      ["index"]
+    ]
+  }
+}

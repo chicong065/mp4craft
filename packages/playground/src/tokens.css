@@ -1,0 +1,92 @@
+/*
+ * Design-system custom properties for the mp4craft playground.
+ *
+ * Values are sourced verbatim from DESIGN.md sections 2 (color palette),
+ * 3 (typography), 5 (layout and radius scale), and 6 (depth and elevation).
+ * Every scenario and primitive component consumes these variables so the
+ * palette, spacing, and elevation stay consistent across the app.
+ */
+
+:root {
+  /* Surfaces and backgrounds. DESIGN.md section 2 "Surface and Background". */
+  --color-background: #ffffff;
+  --color-surface-dark: #181e25;
+  --color-surface-secondary: #f0f0f0;
+  --color-surface-glass: hsla(0, 0%, 100%, 0.4);
+
+  /* Text colors. DESIGN.md section 2 "Text Colors". */
+  --color-text-primary: #222222;
+  --color-text-heading: #18181b;
+  --color-text-secondary: #45515e;
+  --color-text-muted: #8e8e93;
+  --color-text-helper: #5f5f5f;
+  --color-text-on-dark: rgba(255, 255, 255, 0.8);
+
+  /* Borders. DESIGN.md section 2 "Surface and Background". */
+  --color-border: #e5e7eb;
+  --color-border-subtle: #f2f3f5;
+
+  /* Brand primary. DESIGN.md section 2 "Brand Primary". */
+  --color-brand-blue: #1456f0;
+  --color-brand-sky: #3daeff;
+  --color-brand-pink: #ea5ec1;
+  --color-brand-deep: #17437d;
+
+  /* Blue scale. DESIGN.md section 2 "Blue Scale". */
+  --color-primary-200: #bfdbfe;
+  --color-primary-light: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+
+  /* Semantic. DESIGN.md section 2 "Semantic". */
+  --color-success-background: #e8ffea;
+  --color-success-accent: #16a34a;
+  --color-danger-background: #fef2f2;
+  --color-danger-accent: #dc2626;
+  --color-on-status: #ffffff;
+
+  /* Pill nav background tint used by PillButton variants. DESIGN.md section 4. */
+  --color-pill-nav-background: rgba(0, 0, 0, 0.05);
+  --color-pill-nav-active-background: rgba(0, 0, 0, 0.08);
+
+  /* Radius scale. DESIGN.md section 5 "Border Radius Scale". */
+  --radius-minimal: 4px;
+  --radius-button: 8px;
+  --radius-card-small: 13px;
+  --radius-card-medium: 20px;
+  --radius-card-large: 24px;
+  --radius-pill-small: 30px;
+  --radius-pill: 9999px;
+
+  /* Shadows. DESIGN.md section 6 "Depth and Elevation". */
+  --shadow-card: rgba(0, 0, 0, 0.08) 0px 4px 6px;
+  --shadow-ambient: rgba(0, 0, 0, 0.08) 0px 0px 22.576px;
+  --shadow-brand-glow: rgba(44, 30, 116, 0.16) 0px 0px 15px;
+  --shadow-brand-glow-offset: rgba(44, 30, 116, 0.11) 6.5px 2px 17.5px;
+  --shadow-elevated: rgba(36, 36, 36, 0.08) 0px 12px 16px -4px;
+
+  /*
+   * Spacing scale. DESIGN.md section 5 "Spacing System" lists the base-8 scale as
+   * 1, 2, 4, 6, 8, 10, 11, 14, 16, 24, 32, 40, 50, 64, 80 px. Values below cover
+   * every gap called out in the whitespace philosophy and section rhythm guidance.
+   */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 14px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 64px;
+  --space-9: 80px;
+
+  /* Font stacks. DESIGN.md section 3 "Font Families". */
+  --font-ui: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-display: 'Outfit', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mid: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-data: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* Max content width for the shell's main slot per the plan's ScenarioFrame template. */
+  --layout-max-width: 1024px;
+}

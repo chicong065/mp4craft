@@ -1,0 +1,90 @@
+/*
+ * CodeBlock styles. Renders a charcoal-filled code surface with lightweight
+ * syntax highlighting keyed off the token kinds produced by
+ * `lib/highlight-typescript.ts`. The palette stays narrow on purpose:
+ * keyword, type, string, number, and comment receive distinct hues while
+ * identifiers and punctuation share the neutral body colour so the code
+ * reads as code rather than a decorative grid.
+ *
+ * All colours pull from the documentation colour ramp declared on
+ * `:root` so light and dark token hues remain consistent across pages that
+ * share the CodeBlock component.
+ */
+
+.codeBlock {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-card-small);
+  overflow: hidden;
+  background: #181e25;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.pre {
+  margin: 0;
+  padding: var(--space-4) var(--space-5);
+  font-family: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', 'Roboto Mono', monospace;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #e9ecef;
+  overflow-x: auto;
+  white-space: pre;
+  tab-size: 2;
+}
+
+.pre code {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+/* Token palette: hand-picked for charcoal backgrounds, WCAG-AA contrast. */
+
+.keyword {
+  color: #c084fc;
+}
+
+.builtinType {
+  color: #7dd3fc;
+}
+
+.string {
+  color: #86efac;
+}
+
+.number {
+  color: #fda4af;
+}
+
+.comment {
+  color: #8792a3;
+  font-style: italic;
+}
+
+.regex {
+  color: #fdba74;
+}
+
+.punctuation {
+  color: #cbd5e1;
+}
+
+.identifier {
+  color: #e9ecef;
+}
+
+.whitespace {
+  color: inherit;
+}

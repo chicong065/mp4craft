@@ -1,0 +1,74 @@
+{
+  "name": "mp4craft",
+  "version": "1.0.0",
+  "description": "TypeScript-first, zero-dependency MP4 muxer designed for the browsers",
+  "keywords": [
+    "aac",
+    "audio",
+    "av1",
+    "avc",
+    "browser",
+    "flac",
+    "fmp4",
+    "fragmented-mp4",
+    "h264",
+    "h265",
+    "hevc",
+    "iso-bmff",
+    "mp4",
+    "muxer",
+    "opus",
+    "typescript",
+    "video",
+    "vp9",
+    "webcodecs",
+    "zero-dependency"
+  ],
+  "homepage": "https://mp4craft.pages.dev",
+  "bugs": {
+    "url": "https://github.com/chicong065/mp4craft/issues"
+  },
+  "license": "MIT",
+  "author": "Cong Nguyen <chicong065@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chicong065/mp4craft",
+    "directory": "packages/core"
+  },
+  "files": [
+    "dist/index.mjs",
+    "dist/index.mjs.map",
+    "dist/index.d.ts",
+    "LICENSE",
+    "README.md"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepublishOnly": "pnpm build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "devDependencies": {
+    "@types/dom-webcodecs": "^0.1.18",
+    "@types/node": "^22.0.0",
+    "mp4box": "^2.3.0",
+    "tsup": "^8.5.0",
+    "vitest": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

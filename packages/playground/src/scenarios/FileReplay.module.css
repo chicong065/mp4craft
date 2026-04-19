@@ -1,0 +1,142 @@
+/*
+ * FileReplay scenario styles. The upload card uses a dashed-border drop zone
+ * per the plan brief: DESIGN.md section 4 "Product Cards" for the card base,
+ * section 5 for the radius, section 6 for the shadow. The hero preview card on
+ * the completed phase adopts the brand-glow shadow (DESIGN.md section 6) to
+ * match the other scenarios' "stopped" layout rhythm.
+ */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.dropZone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-7) var(--space-5);
+  text-align: center;
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-card-small);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    border-color 150ms ease,
+    background-color 150ms ease;
+}
+
+.dropZone:hover,
+.dropZone:focus-visible {
+  border-color: var(--color-surface-dark);
+  background-color: var(--color-surface-secondary);
+  outline: none;
+}
+
+.dropZoneActive {
+  border-color: var(--color-surface-dark);
+  background-color: var(--color-surface-secondary);
+}
+
+.dropZoneHeading {
+  font-family: var(--font-mid);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.dropZoneHint {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.fileInput {
+  display: none;
+}
+
+.previewCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.previewHeading {
+  font-family: var(--font-mid);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.previewVideo {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--color-surface-dark);
+  border-radius: var(--radius-card-small);
+  display: block;
+}
+
+.statusCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.statusHeading {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.statusMessage {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.errorMessage {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-danger-accent);
+  margin: 0;
+}
+
+.helperText {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.sourceFileName {
+  font-family: var(--font-data);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}

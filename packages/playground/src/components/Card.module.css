@@ -1,0 +1,48 @@
+/*
+ * Card styles matching DESIGN.md section 4 "Product Cards" and "AI Product Cards".
+ * Radius and shadow variants map to the tokens declared in tokens.css so every
+ * card stays within the palette (opacity never exceeds 0.16 per DESIGN.md rule).
+ */
+
+.card {
+  background: var(--color-background);
+  padding: var(--space-5);
+  border: 1px solid var(--color-border-subtle);
+  transition:
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.radiusSmall {
+  border-radius: var(--radius-card-small);
+}
+
+.radiusMedium {
+  border-radius: var(--radius-card-medium);
+}
+
+.shadowSubtle {
+  box-shadow: var(--shadow-card);
+}
+
+.shadowGlow {
+  box-shadow: var(--shadow-brand-glow);
+}
+
+.interactive {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font: inherit;
+  color: inherit;
+}
+
+.interactive:hover {
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px);
+}
+
+.interactive:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 3px;
+}

@@ -1,0 +1,304 @@
+/*
+ * DocsView styles. Two-column long-form layout with a sticky table of
+ * contents on desktop that collapses above the article on narrower viewports.
+ * Typography follows DESIGN.md: Outfit for display headings, DM Sans for
+ * body prose, JetBrains Mono for inline code. Reading column caps at 640
+ * pixels wide because prose readability degrades past roughly 75 characters
+ * per line at the base font size.
+ */
+
+.docsLayout {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5) var(--space-7);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: var(--space-7);
+  align-items: start;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  min-width: 0;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.heroTitleAccent {
+  color: var(--color-brand-blue);
+}
+
+.heroLead {
+  font-family: var(--font-mid);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: var(--space-4) 0 0 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  scroll-margin-top: var(--space-7);
+}
+
+.sectionHeading {
+  font-family: var(--font-mid);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--color-text-heading);
+  margin: 0;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.subsectionHeading {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text-heading);
+  margin: var(--space-3) 0 0 0;
+}
+
+.minorHeading {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text-heading);
+  margin: var(--space-3) 0 0 0;
+}
+
+.paragraph {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  margin: 0;
+  max-width: 640px;
+}
+
+.paragraph code,
+.listItem code,
+.table code {
+  font-family: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', 'Roboto Mono', monospace;
+  font-size: 0.92em;
+  background: var(--color-pill-nav-background);
+  color: var(--color-text-heading);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.list {
+  margin: 0;
+  padding-left: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 640px;
+}
+
+.listItem {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+}
+
+.listItem strong {
+  color: var(--color-text-heading);
+  font-weight: 500;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-card-small);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.table th {
+  background: var(--color-pill-nav-background);
+  font-weight: 500;
+  color: var(--color-text-heading);
+  white-space: nowrap;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.definitionTerm {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-heading);
+  margin: var(--space-3) 0 var(--space-1) 0;
+}
+
+.definitionTerm code {
+  font-family: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', 'Roboto Mono', monospace;
+  font-size: 15px;
+  background: var(--color-pill-nav-background);
+  color: var(--color-text-heading);
+  padding: 1px 8px;
+  border-radius: 4px;
+}
+
+.definitionBody {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-3) 0;
+  max-width: 640px;
+}
+
+.callout {
+  border-left: 3px solid var(--color-brand-blue);
+  background: rgba(20, 86, 240, 0.04);
+  padding: var(--space-3) var(--space-4);
+  border-radius: 0 var(--radius-card-small) var(--radius-card-small) 0;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-text-primary);
+  max-width: 640px;
+}
+
+.callout strong {
+  color: var(--color-text-heading);
+  font-weight: 500;
+}
+
+/*
+ * Sticky table of contents. Remains anchored to the article's reading column
+ * on desktop widths, and collapses into an inline directory above the
+ * article on tablet and mobile. The index mirrors the `<section>` id
+ * attributes below; React-Router does not interfere with hash links because
+ * the anchor handler returns focus to the target without triggering a route
+ * change.
+ */
+.tableOfContents {
+  position: sticky;
+  top: var(--space-6);
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.tableOfContentsHeading {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 0 var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.tableOfContentsLink {
+  display: block;
+  padding: var(--space-1) var(--space-3);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-card-small);
+  transition:
+    background 120ms ease,
+    color 120ms ease;
+}
+
+.tableOfContentsLink:hover {
+  background: var(--color-pill-nav-background);
+  color: var(--color-text-heading);
+}
+
+.signature {
+  font-family: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', 'Roboto Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-heading);
+  background: var(--color-pill-nav-background);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-card-small);
+  margin: 0;
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+@media (max-width: 1023px) {
+  .docsLayout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-5);
+  }
+
+  .tableOfContents {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-card-small);
+  }
+
+  .tableOfContentsHeading {
+    width: 100%;
+    padding: 0;
+    margin: 0 0 var(--space-1) 0;
+  }
+
+  .heroTitle {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 639px) {
+  .heroTitle {
+    font-size: 32px;
+  }
+
+  .sectionHeading {
+    font-size: 24px;
+  }
+
+  .subsectionHeading {
+    font-size: 18px;
+  }
+}

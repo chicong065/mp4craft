@@ -1,0 +1,41 @@
+/*
+ * Stats styles. Dense numeric readout grid. Labels use the DM Sans UI font. Values
+ * use the Roboto data font per DESIGN.md section 3 "Data/Technical". The grid has
+ * no borders or backgrounds so it composes cleanly inside Card or ScenarioFrame
+ * content slots.
+ */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-4);
+}
+
+.entry {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.value {
+  /*
+   * Roboto is reserved for data-heavy contexts per DESIGN.md section 3. Using it
+   * here on the value row (never on labels) keeps the typographic contract intact.
+   */
+  font-family: var(--font-data);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}

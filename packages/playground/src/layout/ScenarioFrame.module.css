@@ -1,0 +1,38 @@
+/*
+ * ScenarioFrame styles. Consistent wrapper around every scenario page. Title
+ * in Outfit 31px weight 600 per DESIGN.md section 3 "Section Heading" with a
+ * DM Sans 16px description. Max content width comes from the layout token so
+ * scenarios never exceed 1024px on desktop.
+ */
+
+.scenarioFrame {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: var(--space-7) var(--space-5);
+}
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 31px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.description {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.content {
+  padding: var(--space-5) 0;
+}

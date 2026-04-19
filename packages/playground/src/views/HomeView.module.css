@@ -1,0 +1,120 @@
+/*
+ * HomeView styles. Landing page introducing every scenario as a product card.
+ * Hero type follows DESIGN.md section 3 "Display Hero" (80px Outfit weight 500,
+ * tight 1.10 line-height). Card grid uses the responsive breakpoints from
+ * DESIGN.md section 8.
+ */
+
+.homeView {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: var(--space-9) var(--space-5) var(--space-8);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: 80px;
+  font-weight: 500;
+  /* Tight 1.10 line-height for the 80px display per DESIGN.md section 3. */
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-5) 0;
+}
+
+/*
+ * Accent span applied to the "craft" portion of the headline so it picks up
+ * the same brand blue used by the header wordmark. Keeping the wordmark
+ * identical across the header and the hero reinforces the brand without
+ * introducing a second saturated colour to the page.
+ */
+.heroTitleAccent {
+  color: var(--color-brand-blue);
+}
+
+.heroDescription {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-8) 0;
+  max-width: 720px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 28px;
+  /*
+   * DESIGN.md section 3 "Card Title" permits weight 500 to 600. 500 keeps
+   * the tone approachable and leaves weight 600 for scenario section headings.
+   */
+  font-weight: 500;
+  line-height: 1.71;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.cardDescription {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.tag {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-heading);
+  background: var(--color-pill-nav-background);
+  border-radius: var(--radius-pill);
+  padding: 2px var(--space-3);
+}
+
+/* Tablet: two columns. */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .heroTitle {
+    font-size: 56px;
+  }
+}
+
+/* Mobile: single column, scaled-down hero. */
+@media (max-width: 767px) {
+  .cardGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .heroTitle {
+    font-size: 40px;
+  }
+  .heroDescription {
+    font-size: 16px;
+  }
+  .homeView {
+    padding: var(--space-7) var(--space-5) var(--space-7);
+  }
+}

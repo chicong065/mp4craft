@@ -1,0 +1,89 @@
+/*
+ * AudioOnly scenario styles. Hero preview card carries the brand glow shadow
+ * per DESIGN.md section 4 "Product Cards" and section 6 "Brand Glow" because
+ * the waveform canvas is the visual centrepiece. Secondary status and
+ * telemetry cards keep the default subtle shadow.
+ */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.previewCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.previewHeading {
+  font-family: var(--font-mid);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.previewCanvas {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--color-surface-dark);
+  border-radius: var(--radius-card-small);
+  display: block;
+}
+
+.playbackAudio {
+  width: 100%;
+  display: block;
+}
+
+.statusCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.statusHeading {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.statusMessage {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.errorMessage {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-primary-700);
+  margin: 0;
+}
+
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.helperText {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: 0;
+}

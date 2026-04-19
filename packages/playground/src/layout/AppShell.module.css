@@ -1,0 +1,313 @@
+/*
+ * AppShell styles. DESIGN.md section 4 "Navigation" calls for a sticky white
+ * header with DM Sans 14px weight 500 links and pill-shaped active indicators.
+ * The footer follows DESIGN.md "Footer" guidance in the example component
+ * prompts (section 9): charcoal fill, rgba(255,255,255,0.8) text.
+ */
+
+.shell {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.headerInner {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+/*
+ * Brand block anchored to the header's left edge. Wraps the wordmark and a
+ * muted tagline behind a thin vertical divider so the header reads as a
+ * weighted product bar rather than a bare logo plus action row.
+ */
+.headerBrand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-heading);
+  /*
+   * The "mp4" portion reads in the primary heading colour while the
+   * "craft" portion picks up the brand blue accent defined in tokens.css.
+   * The pair reserves all saturated colour for the logo surface per
+   * DESIGN.md section 2 "Brand Colours".
+   */
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-1);
+}
+
+.wordmarkAccent {
+  color: var(--color-brand-blue);
+}
+
+.tagline {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+  /* Thin vertical divider on the left edge separates the tagline from the wordmark. */
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--color-border-subtle);
+  /* Prevent the tagline from pushing the header actions off-screen on narrow desktops. */
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.headerLink {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-heading);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  transition: background 120ms ease;
+}
+
+.headerLink:hover {
+  background: var(--color-pill-nav-background);
+}
+
+.navBar {
+  border-bottom: 1px solid var(--color-border-subtle);
+  background: var(--color-background);
+}
+
+.navInner {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-5);
+  display: flex;
+  gap: var(--space-2);
+  /*
+   * Single-row scenario nav. Setting `flex-wrap: nowrap` avoids the lonely
+   * orphan-pill row that appears when the catalog expands past the viewport
+   * width, and the horizontal overflow adapts gracefully on narrower desktop
+   * widths. The tablet breakpoint below swaps this for a vertical stack.
+   */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  /*
+   * Hide the horizontal scrollbar on evergreen engines so the nav reads as a
+   * clean strip of pills rather than gaining a scroll-track gutter. The bar
+   * still responds to trackpad, wheel, and keyboard interactions.
+   */
+  scrollbar-width: none;
+}
+
+.navInner::-webkit-scrollbar {
+  display: none;
+}
+
+/*
+ * Keep every pill at its natural content width inside the nowrap strip.
+ * Without this rule the flex layout would shrink pills below their text
+ * content once the aggregate width exceeds the viewport, producing ellipsis
+ * clipping instead of the intended horizontal scroll.
+ */
+.navInner > * {
+  flex-shrink: 0;
+}
+
+.hamburgerBar {
+  display: none;
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.hamburgerInner {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-5);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mobileDrawer {
+  display: none;
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.mobileDrawerInner {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.main {
+  flex: 1 0 auto;
+  /*
+   * Scenario content sits inside ScenarioFrame which already applies the
+   * 1024px max width. Main itself stays full width so the footer can align
+   * cleanly across viewports.
+   */
+  display: block;
+}
+
+.footer {
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark);
+  margin-top: var(--space-8);
+  /* 64px top padding per DESIGN.md section 5 "Section rhythm". */
+  padding: var(--space-8) var(--space-5) var(--space-7);
+}
+
+/*
+ * Footer grid: a wide brand block on the left followed by two narrower link
+ * columns on the right. Collapses to a single column on mobile via the
+ * breakpoint below.
+ */
+.footerInner {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-6);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 460px;
+}
+
+.footerWordmark {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-1);
+}
+
+.footerWordmarkAccent {
+  color: var(--color-brand-blue);
+}
+
+.footerDescription {
+  margin: 0;
+  color: var(--color-text-on-dark);
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.footerCopyright {
+  color: var(--color-text-on-dark);
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footerColumnHeading {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.5;
+  margin-bottom: var(--space-1);
+}
+
+.footerLink {
+  color: var(--color-text-on-dark);
+  opacity: 0.85;
+  text-decoration: none;
+  transition: opacity 120ms ease;
+}
+
+.footerLink:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Tablet: >= 768px and < 1024px. Collapse nav to a vertical stack. */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .navBar {
+    /* Keep the nav visible but stack pills vertically on tablet widths. */
+    display: block;
+  }
+  .navInner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  /* Drop the header tagline on tablet widths so the action row keeps breathing room. */
+  .tagline {
+    display: none;
+  }
+  /* Footer goes to two columns: brand + a combined link block. */
+  .footerInner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footerBrand {
+    grid-column: 1 / span 2;
+    max-width: none;
+  }
+}
+
+/* Mobile: < 768px. Hide the inline nav and expose the hamburger toggle. */
+@media (max-width: 767px) {
+  .navBar {
+    display: none;
+  }
+  .hamburgerBar {
+    display: block;
+  }
+  .mobileDrawerVisible {
+    display: block;
+  }
+  .tagline {
+    display: none;
+  }
+  /* Footer collapses to a single-column stack on phones. */
+  .footerInner {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}

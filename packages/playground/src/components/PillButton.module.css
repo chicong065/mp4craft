@@ -1,0 +1,63 @@
+/*
+ * PillButton styles. Pill-radius (9999px) navigation and toggle button matching
+ * DESIGN.md section 4 "Pill Nav" and "Pill White". Font treatment follows
+ * DESIGN.md section 3 "Nav/Link" (DM Sans 14px weight 500).
+ */
+
+.pillButton {
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-pill);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  transition:
+    background 120ms ease,
+    color 120ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.nav {
+  background: var(--color-pill-nav-background);
+  color: var(--color-text-heading);
+}
+
+.nav:hover {
+  background: var(--color-pill-nav-active-background);
+}
+
+.navActive {
+  background: var(--color-pill-nav-active-background);
+  color: var(--color-text-heading);
+}
+
+/*
+ * The `toggle-active` variant renders a radiogroup's currently-selected pill.
+ * It borrows the charcoal fill from DESIGN.md section 4 "Pill Primary Dark"
+ * so the selected option reads as unambiguously active, unlike `nav-active`
+ * whose three-percent alpha tint is tuned for the top-navigation current-route
+ * indicator and reads as too subtle when used to signal a user choice.
+ */
+.toggleActive {
+  background: var(--color-surface-dark);
+  color: #ffffff;
+}
+
+.toggleActive:hover {
+  filter: brightness(1.15);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+}
+
+.ghost:hover {
+  background: var(--color-pill-nav-background);
+  color: var(--color-text-heading);
+}
