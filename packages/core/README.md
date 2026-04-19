@@ -1,8 +1,6 @@
 <p align="center">
   <a href="https://mp4craft.pages.dev">
-    <picture>
-      <img src="docs/logo.svg" width="180" height="180" alt="mp4craft logo" />
-    </picture>
+    <img src="https://raw.githubusercontent.com/chicong065/mp4craft/main/docs/logo.svg" width="180" height="180" alt="mp4craft logo" />
   </a>
 </p>
 
